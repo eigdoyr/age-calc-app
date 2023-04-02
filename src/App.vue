@@ -6,4 +6,13 @@ import AgeCalculator from "./components/AgeCalculator.vue";
   <AgeCalculator />
 </template>
 
-<style></style>
+<style>
+body {
+  font-family: "Poppins", sans-serif;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background-color: var(--off-white);
+  padding: 1rem;
+}
+</style>

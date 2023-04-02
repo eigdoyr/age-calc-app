@@ -43,9 +43,11 @@ import { ref } from "vue";
         </div>
       </div>
 
-      <!-- <img src="/icon-arrow.svg" alt="" /> -->
+      <div class="divider">
+        <img src="/icon-arrow.svg" alt="" />
+      </div>
+      <hr />
       <div class="output-container">
-        <!-- <hr /> -->
         <h1>
           <span>{{ yearCalc || "38" }}</span> years
         </h1>
@@ -61,19 +63,12 @@ import { ref } from "vue";
 </template>
 
 <style scoped>
-main {
-  font-family: "Poppins", sans-serif;
-  display: grid;
-  place-content: center;
-  min-height: 100vh;
-  background-color: var(--off-white);
-}
 .main-container {
   background-color: var(--white);
-  padding: 3rem 1rem;
-  margin: 1rem;
+  padding: 3rem 1.5rem;
   border-radius: 2rem 2rem 6rem 2rem;
   width: 100%;
+  max-width: 52.25rem;
 }
 
 .input-container {
@@ -82,6 +77,13 @@ main {
   justify-content: space-between;
   gap: 1rem;
   width: 100%;
+  /* max-width: 30rem; */
+}
+
+.divider {
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 label {
@@ -93,14 +95,81 @@ label {
 
 input {
   width: 100%;
-  /* padding: 0.5rem; */
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--light-grey);
+  color: var(--off-black);
+  font-size: 1.15rem;
 }
 
 h1,
 h2,
 h3 {
-  font-size: 2rem;
+  font-size: 3.5rem;
   font-weight: 800;
   font-style: italic;
+  line-height: 3.65rem;
+}
+
+span {
+  color: var(--purple);
+}
+
+hr {
+  margin: 4.25rem 0;
+  background-color: var(--light-grey);
+  height: 1.5px;
+  border: none;
+}
+
+img {
+  background-color: var(--purple);
+  border-radius: 50%;
+  padding: 0.5rem;
+  position: absolute;
+  margin-top: 2.5rem;
+}
+
+@media (width>=1024px) {
+  .main-container {
+    padding: 3.8rem;
+  }
+
+  .input-container {
+    width: 80%;
+    gap: 2rem;
+  }
+
+  .divider {
+    justify-content: flex-end;
+  }
+
+  label {
+    letter-spacing: 0.15rem;
+    font-size: 0.85rem;
+  }
+
+  input {
+    border-radius: 0.5rem;
+    font-size: 2rem;
+    margin: 0.65rem 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: 6.5rem;
+    line-height: 6.85rem;
+  }
+
+  hr {
+    margin: 2.25rem 0 2.75rem 0;
+  }
+
+  img {
+    padding: 1.65rem;
+    position: absolute;
+    margin-top: -1rem;
+  }
 }
 </style>
